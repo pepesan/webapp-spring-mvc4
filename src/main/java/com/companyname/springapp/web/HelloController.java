@@ -1,6 +1,7 @@
 package com.companyname.springapp.web;
 
 import java.io.IOException;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,7 +22,7 @@ public class HelloController {
             throws ServletException, IOException {
 
         logger.info("Returning hello view");
-
-        return new ModelAndView("hello.jsp");
+        Date f= new Date();
+        return new ModelAndView("hello.jsp","fecha",f);
     }
 }

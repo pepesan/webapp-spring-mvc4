@@ -1,8 +1,9 @@
+<%@ include file="/WEB-INF/views/include.jsp" %>
+
 <html>
-  <head><title>Hello :: Spring Application</title></head>
-  <body>
-    <h1>Hello - Spring Application</h1>
-    <p>Greetings.</p>
-    <p><a href="/index.jsp">Main Page</a></p>
-  </body>
+<head><title>Hello :: Spring Application</title></head>
+<body>
+<h1>Hello - Spring Application</h1>
+<p>Greetings, it is now <c:out value="${fecha.toString()}"/></p>
+</body>
 </html>
