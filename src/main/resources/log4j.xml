@@ -15,6 +15,9 @@
     <logger name="springapp">
         <level value="info" />
     </logger>
+    <logger name="restapp">
+        <level value="info" />
+    </logger>
 
     <!-- 3rdparty Loggers -->
     <logger name="org.springframework.beans">
@@ -34,7 +37,7 @@
     </logger>
 
     <logger name="org.springframework.web">
-        <level value="debug" />
+        <level value="warn" />
     </logger>
 
     <logger name="org.springframework.webflow">
@@ -43,7 +46,7 @@
 
     <!-- Root Logger -->
     <root>
-        <priority value="debug" />
+        <priority value="warn" />
         <appender-ref ref="console" />
     </root>
 
