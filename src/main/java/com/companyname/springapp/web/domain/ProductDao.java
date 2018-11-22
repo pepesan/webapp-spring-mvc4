@@ -8,4 +8,10 @@ public interface ProductDao {
 
     public void saveProduct(Product prod);
 
+    public Product addProduct(Product prod);
+
+    public Product getProduct(Integer id);
+
+    public Product deleteProduct(Integer id);
+
 }

@@ -43,6 +43,18 @@ public class InventoryController {
 
         return new ModelAndView("list.jsp", "model", myModel);
     }
+    @RequestMapping(value="/addl.htm")
+    public ModelAndView addRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+
+        Map<String, Object> myModel = new HashMap<String, Object>();
+        this.productManager.addProduct(new Product());
+        List<Product> listado=this.productManager.getProducts();
+        myModel.put("products", listado);
+
+        return new ModelAndView("addl.jsp", "model", myModel);
+    }
 
 
     public void setProductManager(ProductManager productManager) {

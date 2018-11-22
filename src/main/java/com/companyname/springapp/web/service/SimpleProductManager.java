@@ -24,6 +24,28 @@ public class SimpleProductManager implements ProductManager {
         return productDao.getProductList();
     }
 
+    @Override
+    public Product addProduct(Product p) {
+        productDao.saveProduct(p);
+        return p;
+    }
+
+    @Override
+    public Product updateProduct(Product p) {
+        productDao.saveProduct(p);
+        return p;
+    }
+
+    @Override
+    public Product getProduct(Integer id) {
+        return productDao.getProduct(id);
+    }
+
+    @Override
+    public Product deleteProduct(Integer id) {
+        return null;
+    }
+
     public void increasePrice(int percentage) {
         List<Product> products = productDao.getProductList();
         if (products != null) {

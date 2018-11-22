@@ -23,6 +23,11 @@ public class Product implements Serializable {
     private String description;
     private Double price;
 
+    public Product(){
+        this.price=0.0;
+        this.description="None";
+    }
+
     public Integer getId()
     {
         return id;

@@ -23,6 +23,27 @@ public class HyperSimpleProductManager implements ProductManager {
         return products;
     }
 
+    @Override
+    public Product addProduct(Product p) {
+        products.add(p);
+        return p;
+    }
+
+    @Override
+    public Product updateProduct(Product p) {
+        return null;
+    }
+
+    @Override
+    public Product getProduct(Integer id) {
+        return null;
+    }
+
+    @Override
+    public Product deleteProduct(Integer id) {
+        return null;
+    }
+
     public void increasePrice(int percentage) {
         if (products != null) {
             for (Product product : products) {

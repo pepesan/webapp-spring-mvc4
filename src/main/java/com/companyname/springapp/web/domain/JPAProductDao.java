@@ -31,4 +31,27 @@ public class JPAProductDao implements ProductDao {
         em.merge(prod);
     }
 
+    @Transactional(readOnly = false)
+    public Product addProduct(Product prod) {
+        //em.getTransaction().begin();
+        em.persist(prod);
+        //em.getTransaction().commit();
+        return prod;
+    }
+
+    @Transactional(readOnly = true)
+    public Product getProduct(Integer id) {
+        Product p=em.find(Product.class,id);
+        return p;
+    }
+
+    @Override
+    public Product deleteProduct(Integer id) {
+        Product p=em.find(Product.class,id);
+        em.remove(p);
+        return  p;
+
+    }
+
+
 }
