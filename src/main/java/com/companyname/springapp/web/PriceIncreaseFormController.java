@@ -10,14 +10,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.io.IOException;
 
 
 @Controller
-@RequestMapping(value="priceincrease.htm")
+@RequestMapping(value="/priceincrease.htm")
 public class PriceIncreaseFormController {
 
     /** Logger for this class and subclasses */
@@ -30,7 +34,7 @@ public class PriceIncreaseFormController {
     public String onSubmit(@Valid PriceIncrease priceIncrease, BindingResult result)
     {
         if (result.hasErrors()) {
-            return "priceincrease";
+            return "priceincrease.jsp";
         }
 
         int increase = priceIncrease.getPercentage();
@@ -38,14 +42,15 @@ public class PriceIncreaseFormController {
 
         productManager.increasePrice(increase);
 
-        return "redirect:/hello.htm";
+        return "redirect:/list.htm";
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    protected PriceIncrease formBackingObject(HttpServletRequest request) throws ServletException {
+    protected ModelAndView formBackingObject(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         PriceIncrease priceIncrease = new PriceIncrease();
         priceIncrease.setPercentage(15);
-        return priceIncrease;
+        return new ModelAndView("priceincrease.jsp", "priceIncrease", priceIncrease);
     }
 
     public void setProductManager(ProductManager productManager) {

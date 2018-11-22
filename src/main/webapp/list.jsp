@@ -5,7 +5,9 @@
 <body>
 <h1>Listado de productos</h1>
 <p> <c:out value="${model.now}"/></p>
-<p> <a href="priceincrease.htm">Incrementar Precios</a></p>
+<br>
+<p><a href="<c:url value="priceincrease.htm"/>">Increase Prices</a></p>
+<br>
 <h3>Products</h3>
 <c:forEach items="${model.products}" var="prod">
     <c:out value="${prod.description}"/>
