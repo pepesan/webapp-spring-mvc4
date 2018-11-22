@@ -52,8 +52,10 @@ public class MiRestController {
         dato.setCadena("Mi cadena borrada");
         return dato;
     }
+    /*
     @RequestMapping("/{player}")
     public String message(@PathVariable String player) {//REST Endpoint.
         return "Hello " + player;
     }
+    */
 }

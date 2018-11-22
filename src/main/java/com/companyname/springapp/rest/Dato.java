@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Dato implements Serializable {
     public String cadena;
 
-    Dato(){
+    public Dato(){
         this.cadena="";
     }
 
