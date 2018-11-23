@@ -38,7 +38,7 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
         <property name="persistenceUnitName" value="springappPU"></property>
         <property name="jpaProperties">
             <props>
-                <prop key="hibernate.hbm2ddl.auto">create-drop</prop>
+                <prop key="hibernate.hbm2ddl.auto">${spring.jpa.hibernate.ddl-auto}</prop>
             </props>
         </property>
     </bean>

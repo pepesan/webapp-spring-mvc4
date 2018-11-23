@@ -39,7 +39,11 @@ public class CRUDRestController {
     @RequestMapping(value = "/productos/{id}",method = RequestMethod.POST)
     public Product editDatoById(@PathVariable String id,@RequestBody Product dato)
             throws ServletException, IOException {
-        productManager.addProduct(dato);
+        if(Integer.parseInt(id)==dato.getId()) {
+            productManager.addProduct(dato);
+            return dato;
+        }
+        //return de fallo
         return dato;
     }
     @RequestMapping(value = "/productos/{id}",method = RequestMethod.DELETE)
