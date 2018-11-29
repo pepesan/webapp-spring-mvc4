@@ -45,7 +45,7 @@ public class JPAProductDao implements ProductDao {
         return p;
     }
 
-    @Override
+    @Transactional(readOnly = false)
     public Product deleteProduct(Integer id) {
         Product p=em.find(Product.class,id);
         em.remove(p);

@@ -26,7 +26,7 @@ public class SimpleProductManager implements ProductManager {
 
     @Override
     public Product addProduct(Product p) {
-        productDao.saveProduct(p);
+        productDao.addProduct(p);
         return p;
     }
 
@@ -43,7 +43,7 @@ public class SimpleProductManager implements ProductManager {
 
     @Override
     public Product deleteProduct(Integer id) {
-        return null;
+        return productDao.deleteProduct(id);
     }
 
     public void increasePrice(int percentage) {
